@@ -47,29 +47,31 @@ void Card :: display(){
 
 int main(){
     Card t, ch, prize;
-    Card c1(5,clubs);
-    Card c2(9, heart);
-    Card c3(jack, spades);
+    Card c1(7,clubs);
+    Card c2(jack, heart);
+    Card c3(ace, spades);
 
     prize = c3;
 
+    cout<<"Swapping card 1 & 3"<<endl;
+    t=c3; c3=c1; c1=t;
     cout<<"Swapping card 2 & 3"<<endl;
     t=c3; c3=c2; c2=t;
-    cout<<"Swapping card 2 & 1"<<endl;
+    cout<<"Swapping card 1 & 2"<<endl;
     t=c2; c2=c1; c1=t;
-    cout<<"Swapping card 1 & 3"<<endl;
-    t=c1; c1=c3; c3=t;
-
+    
+    cout<<"Your intended card:";
+    prize.display();
     cout<<"Guess where in 1/2/3 is Prize card"<<endl;
     int pos;
     cin>>pos;
     switch(pos){
-        case 1: ch = c1;
-        case 2: ch = c2;
-        case 3: ch = c3;
+        case 1: ch = c1; break;
+        case 2: ch = c2; break;
+        case 3: ch = c3; break;
     }
 
-    if(prize.isequal(ch)) cout<<"Yes you're right"<<endl;
+    if(ch.isequal(prize)) cout<<"Yes you're right"<<endl;
     else cout<<"Buddy you're wrong"<<endl;
     cout<<"Your Chosen Card"<<endl;
     ch.display();
