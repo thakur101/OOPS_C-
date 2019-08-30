@@ -21,7 +21,7 @@ class Distance{
         Distance add_dist(const Distance&) const;
 };
 
-Distance Distance::add_dist(const Distance& d2) const{
+Distance Distance::add_dist(const Distance& d2) const{   //The "const" inside add_dist doesn't allow d2 data variables to change. 
         Distance temp;
         temp.inches = inches + d2.inches;
         if(temp.inches > 12){
