@@ -1,3 +1,6 @@
+//Converting from meter to feet between a user defined data type(Object) and float type.
+
+
 #include <iostream>
 using namespace std;
 
@@ -10,7 +13,7 @@ class Convert{
         Convert() : feet(0), inches(0.0), mtr(3.28033F)
         {             }
         
-        Convert(float val): mtr(3.20833F)
+        Convert(float val): mtr(3.20833F) //Note that you need to include this constant "mtr" in your Constructor declaration.
         {
             float val1 = mtr * val;
             feet = (int)val1;
